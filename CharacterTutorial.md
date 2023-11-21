@@ -18,7 +18,7 @@ Then add a camera as a child to the Player and place it in front of the eyes (yo
 
 Then to the Player object add the script "PlayerMovementScript" 
 ```.cs
-
+{
     public CharacterController controller;
 
     public float speed = 10f;
@@ -27,6 +27,41 @@ Then to the Player object add the script "PlayerMovementScript"
     public Transform GroundCheck;
     public float groundDistance = 0.4f;
     public  LayerMask groundMask;
+   ```
+Comment
+```.cs
+    Vector3 velocity;
+    bool isGrounded;
+
+
+    void Update()
+    {
+        
+        isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -1f;
+        }
+
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime); 
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(JumpHeight * -2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime); 
+    }
+}
+
 
 
 ```
