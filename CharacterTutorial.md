@@ -15,3 +15,19 @@ Make an Empty Object, name it Player, and add the Character Controller Component
                   Scale = 1.2, 1.8, 1.2
 
 Then add a camera as a child to the Player and place it in front of the eyes (you can set the vision cone however you like.)
+
+Then to the Player object add the script "PlayerMovementScript" 
+```.cs
+
+    public CharacterController controller;
+
+    public float speed = 10f;
+    public float gravity = -9.8f;
+    public float JumpHeight = 3f;
+    public Transform GroundCheck;
+    public float groundDistance = 0.4f;
+    public  LayerMask groundMask;
+
+
+```
+
