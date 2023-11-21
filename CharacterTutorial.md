@@ -13,3 +13,5 @@ Make an Empty Object, name it Player, and add the Character Controller Component
                   Height = 3.6
          Cylinder 
                   Scale = 1.2, 1.8, 1.2
+
+Then add a camera as a child to the Player and place it in front of the eyes (you can set the vision cone however you like.)
