@@ -30,7 +30,7 @@ Then to the Player object add the script "PlayerMovementScript"
    ```
 These are the variables we will need 
          Speed and JumpHeight can be set to whatever you want.
-         Gravity is the freefall velocity 9.8m/s. This is negative cause it's in the -y direction.
+         Gravity is the freefall velocity of humans 9.8m/s. This is negative cause it's in the -y direction.
          
 ```.cs
     Vector3 velocity;
