@@ -28,7 +28,10 @@ Then to the Player object add the script "PlayerMovementScript"
     public float groundDistance = 0.4f;
     public  LayerMask groundMask;
    ```
-Comment
+These are the variables we will need 
+         Speed and JumpHeight can be set to whatever you want.
+         Gravity is the freefall velocity 9.8m/s. This is negative cause it's in the -y direction.
+         
 ```.cs
     Vector3 velocity;
     bool isGrounded;
