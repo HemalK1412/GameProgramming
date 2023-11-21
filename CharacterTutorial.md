@@ -24,29 +24,18 @@ Then to the Player object add the script "PlayerMovementScript"
     public float speed = 10f;
     public float gravity = -9.8f;
     public float JumpHeight = 3f;
-    public Transform GroundCheck;
-    public float groundDistance = 0.4f;
-    public  LayerMask groundMask;
+
+    Vector3 velocity;
    ```
 These are the variables we will need 
          Speed and JumpHeight can be set to whatever you want.
          Gravity is the freefall velocity of humans at 9.8m/s. This is negative cause it's in the -y direction.
          
+         
 ```.cs
-    Vector3 velocity;
-    bool isGrounded;
-
 
     void Update()
     {
-        
-        isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
-
-        if(isGrounded && velocity.y < 0)
-        {
-            velocity.y = -1f;
-        }
-
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
