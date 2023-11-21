@@ -1,0 +1,3 @@
+# Journal 
+## Journal
+Scriptable guns
