@@ -7,4 +7,9 @@ In Unity set up a Ground plane first. Then set the layer to "Ground". If you do 
 
 
 Make an Empty Object, name it Player, and add the Character Controller Component to it.
-Within the component change the Height to 3.6
+         The character controller already has a capsule collider built into it. So if you have a character model import it and set it to be the child of the Player object and adjust the height and radius so it envelops the model. I will be using a Cylinder as my Player so here are my values
+         Player -> Character controller component
+                  Radius = 0.6
+                  Height = 3.6
+         Cylinder 
+                  Scale = 1.2, 1.8, 1.2
