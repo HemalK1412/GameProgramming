@@ -60,5 +60,31 @@ These are the variables we will need
 Input.GetAxis is to get data from the Input Manager and then we multiply the value with the corresponding sides and save it in a Vector3 variable. This variable is temporary. 
 Then to move we use Controller.Move(The temporary variable multiplied by speed multiplied by Time.deltaTime to smooth out the movement.
 For Jumping first, we will check for the key press using an if statement.
-The formula for Jump is Jumping = Jump Height 
+The formula for Jump is Jumping = Jump Height * -2f * gravity.
+Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. So to reset the gravity when the character lands is to create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
+We will some new variables.
 
+```.cs
+
+    public Transform GroundCheck;
+    public float groundDistance = 0.4f;
+    public  LayerMask groundMask;
+
+  
+```
+The new object we created will serve as the Ground Check transform.
+The Ground distance can be adjusted and is the distance at which it will look for the Ground Plane.
+The layer mask is to isolate the ground plane collider.
+```.cs
+        isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -1f;
+        }
+
+```
+
+When the character lands it checks for the ground using Physics.Checksphere at the position at a distance of 0.4f for the Ground layer. 
+If isGrounded is true and the current velocity is 0 it resets the velocity component to -1f.
+Without this the character would fall faster with every jump.
