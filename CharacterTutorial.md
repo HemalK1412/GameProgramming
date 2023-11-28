@@ -59,5 +59,6 @@ These are the variables we will need
 ```
 Input.GetAxis is to get data from the Input Manager and then we multiply the value with the corresponding sides and save it in a Vector3 variable. This variable is temporary. 
 Then to move we use Controller.Move(The temporary variable multiplied by speed multiplied by Time.deltaTime to smooth out the movement.
-For Jumping first, we will check for the key press using an if statement 
+For Jumping first, we will check for the key press using an if statement.
+The formula for Jump is Jumping = Jump Height 
 
