@@ -88,3 +88,33 @@ The layer mask is to isolate the ground plane collider.
 When the character lands it checks for the ground using Physics.Checksphere at the position at a distance of 0.4f for the Ground layer. 
 If isGrounded is true and the current velocity is 0 it resets the velocity component to -1f.
 Without this the character would fall faster with every jump.
+
+Mouse Script
+```.cs
+public class Mouse : MonoBehaviour
+{
+    public Transform Player;
+    public float mouseSensitivity = 100f;
+
+    float xRotation = 0f;
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        Player.Rotate(Vector3.up * mouseX);
+    }
+}
+```
+
