@@ -90,6 +90,8 @@ If isGrounded is true and the current velocity is 0 it resets the velocity compo
 Without this the character would fall faster with every jump.
 
 Mouse Script
+
+The script is placed on the Camera that is child to the character controller.
 ```.cs
 public class Mouse : MonoBehaviour
 {
@@ -98,23 +100,41 @@ public class Mouse : MonoBehaviour
 
     float xRotation = 0f;
 
-    void Start()
+```
+The variables are a reference to the player transform.
+Mouse sensitivity can be changed in the pause menu.
+xRotation is defined to clamp is rotation from top to bottom so the camera does not perform a flip.
+
+```.cs
+    private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
-    }
+    }   
 
-    // Update is called once per frame
+```
+This is to basically hide the cursor when the game starts.
+The cursor appears when the Esc key is pressed.
+
+
+```.cs
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
+```
+This is storing the value of the different axes from the input manager multiplied by the mouse sensitivity and Time.deltaTime.
+```.cs
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+```
+This is subtracting the mouseY from the xRotation and clamping the value from -90f to 90f.
+```.cs
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         Player.Rotate(Vector3.up * mouseX);
     }
 }
 ```
-
+So now we apply the xRotation(X axis) to the camera.
