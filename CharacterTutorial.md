@@ -137,4 +137,7 @@ This is subtracting the mouseY from the xRotation and clamping the value from -9
     }
 }
 ```
-So now we apply the xRotation(X axis) to the camera.
+So now we apply the xRotation(y axis) to the camera.
+And apply the X axis rotation to the player.
+
+**Need to look into the final explanation**
