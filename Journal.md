@@ -10,6 +10,10 @@ For the gun shooting using ray cast, the gun kept shooting without mouse input.Â
 For my realistic character controller, first-person the added force component from the grenade makes the character fly and keep rotating. 
   So the character has a ground check object that looks for a ground object in the Ground layer and resets the velocity gained from falling and since the character is rotating this cannot take place. So in the character controllers' rigid body you can constraint all rotation for the characters so he still takes the force but does not go into a death spiral  
 
+
+the grenade will apply force to the boxes but no the destroyed pieces 
+    Scan for colliders twice and apply the force twice.
+
 for my guns the muzzle flash will not instantiate
 ---code image
 The time to destroy the muzzle flash does not need to be with Time.DeltaTime. The flash was instantiating as a child of the disabled muzzle flash i had in the game. Since the parent object is diabled the flashes were too. So create a prefab of the flashes and reference them to the Gun script. The muzzle flash now work but the direction of the flashes is off. to solve this open the prefab and change the rotation of the objects in it.
