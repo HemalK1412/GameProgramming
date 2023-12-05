@@ -13,3 +13,9 @@ For my realistic character controller, first-person the added force component fr
 for my guns the muzzle flash will not instantiate
 ---code image
 The time to destroy the muzzle flash does not need to be with Time.DeltaTime. The flash was instantiating as a child of the disabled muzzle flash i had in the game. Since the parent object is diabled the flashes were too. So create a prefab of the flashes and reference them to the Gun script. The muzzle flash now work but the direction of the flashes is off. to solve this open the prefab and change the rotation of the objects in it.
+
+for the player controller the character has to be referenced even when the script is on the character itself the horizontal view is locked  the mouse script cannot be without the character reference   add images 
+
+        Player.Rotate(Vector3.up * mouseX); 
+from mouse script and replace 
+        Player with this.gameObject.transform.rotate(this breaks horizontal view)
