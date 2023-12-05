@@ -1,4 +1,4 @@
-# Journal 
+ee# Journal 
 ## Journal
 For Mac users, the scripts do not open right away in Visual Studio so locate the file in Explorer and open it from there.
 
