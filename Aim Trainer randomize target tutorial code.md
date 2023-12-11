@@ -21,7 +21,8 @@ _______3 coordinate system image
 If the origin marks the center of our collider then we need to find the bounding faces of our collider.
 Which for the x-axis would be -x to origin + origin to X same for Y and Z axes.
 
-So to get the min value of X (minX) we can 
+minX = center - (size of the X axis)/2.
+maxX = center + (size of the X axis)/2.
 
 ```.cs
 
