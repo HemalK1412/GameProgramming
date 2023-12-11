@@ -34,6 +34,9 @@ An reference to the Box Collider which is to be drag and dropped from the inspec
     public Vector3 GetRandomPosition()
     {
         Vector3 centre = col.center + transform.position;
+```
+This is to ensure the accuracy even if the position of the collider moves.
+```.cs
 
         float minX = centre.x - col.size.x / 2f;
         float maxX = centre.x + col.size.x / 2f;
@@ -43,7 +46,10 @@ An reference to the Box Collider which is to be drag and dropped from the inspec
 
         float minZ = centre.z - col.size.z / 2f;
         float maxZ = centre.z + col.size.z / 2f;
+```
+**This is where we implement our calculations.
 
+```.cs
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
         float randomZ = Random.Range(minZ, maxZ);
