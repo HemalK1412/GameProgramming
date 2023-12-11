@@ -167,4 +167,36 @@ public class ZombieSpawner : MonoBehaviour
     }
 }
 ```
-The zombie types would need to be referenced in the array created in the inspector.
+The setup includes referencing the collider from the inspector and adding the types of zombies to the array in the inspector as well.
+
+So on the trigger in the Update() function which is Spacebar press(this can be whatever you want). 
+The script first selects a random zombie type from the array(The zombie's array index to be specific).
+Then it grabs a SpawnPosition from the GetRandomPosition() function and instantiates the zombie at the random position and keeps the zombies rotaion as it is in the prefab.
+
+_________________________________________
+
+method 2:
+
+```.cs
+
+public class ZombieSpawner : MonoBehaviour
+{
+        public GameObject[] zombietypes;
+
+        void update()
+        {
+        if(Imput.GetKeyDown(KeyCode.Space))
+                {
+                        int randomzombietype = Random.Range(0, zombietypes.Length);
+
+                        Vector3 randomposition = new Vector3(Random.Range(-5, 5), Random.Range(2, 7), Random.Range(-5, 5));
+
+                        
+                        instantiate(zombietypes[randomzombietype], randomposition, Quaternion.Identity);
+                }
+        }
+}
+```
+The main difference between the 2 methods is who does the calculation for the minimum and maximum ranges.
+
+Also, another use for the script described in the aim trainer section is that the script can be used anywhere you need to get random positions even if no new game object is created.
