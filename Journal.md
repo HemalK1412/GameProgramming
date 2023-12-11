@@ -81,3 +81,5 @@ public class Mouse : MonoBehaviour
 
 Teleporting while moving does funky stuff
 
+The character could not jump (the code had zero errors and the logic was perfect)
+  The problem was if you set the ground distance value very low it will overwrite the jump velocity value and reset jump velocity to 0 very quickly.
