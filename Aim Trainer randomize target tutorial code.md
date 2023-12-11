@@ -1,4 +1,4 @@
-eThis tutorial is for spawning objects at random positions.
+This tutorial is for spawning objects at random positions.
 And will explore 2 ways of achieving this.
 1 (Technically not spawning)Move the object after being hit and update counters as in an Aim trainer.
 2 Actually spawning random objects at random locations.
