@@ -19,10 +19,22 @@ Then add the script for random spawn you can name it anything you want. I have g
 _______3 coordinate system image
 
 If the origin marks the center of our collider then we need to find the bounding faces of our collider.
-Which for the x-axis would be -x to origin + origin to X same for Y and Z axes.
 
 minX = center - (size of the X axis)/2.
 maxX = center + (size of the X axis)/2.
+
+So if the origin is at 0 and the distance of Origin to X = 1, then origin to -x = 1 as they are equidistant from the origin.
+Then size of X axis would be (-x,X) = 1 + 1 =2.
+
+min X = 0(center) - 2(size of X axis)/2
+        = 0 - 1
+            -1
+max X = 0(center) + 2(size of X axis)/2
+        = 0 + 1
+            1
+The range of the x-axis would be (minX, maxX) = (-1, 1)
+
+Same for the Y and Z axes.
 
 ```.cs
 
