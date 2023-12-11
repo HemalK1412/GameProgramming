@@ -37,9 +37,17 @@ The range of the x-axis would be (minX, maxX) = (-1, 1)
 Same for the Y and Z axes.
 
 ```.cs
+public class TargetBounds : MonoBehaviour
+{
+    public static TargetBounds Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     [SerializeField] BoxCollider col;
 ```
+Create an public instance of the script so the spawn objects can access the GetRandomPosition function.
 An reference to the Box Collider which is to be drag and dropped from the inspector to this script.
 ```.cs
 
@@ -80,13 +88,6 @@ We store it in a new Vector 3 with the 3 coordinates as the values for x,y and z
 
 
 ```.cs
-public class TargetBounds : MonoBehaviour
-{
-    public static TargetBounds Instance;
-    private void Awake()
-    {
-        Instance = this;
-    }
 
 ```
 
