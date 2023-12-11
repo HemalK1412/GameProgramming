@@ -86,4 +86,31 @@ So after we have our ranges for different axes we have the code select a random 
 
 We store it in a new Vector 3 with the 3 coordinates as the values for x,y and z axis.
 
+How to use: (Aim Trainer)
 
+Say this is the start screen.
+__________ Aim Trainer How to use image
+
+If the player hits a target.
+The target ONHit will call the GetRamdomPosition() function and get a transform vector3 as a return value.
+So on the target the script would be the following and it would set the new position the same as the return value.
+```.cs
+public void Hit()
+    {
+        transform.position = TargetBounds.Instance.GetRandomPosition();
+    }
+```
+
+
+____________________________________________________________________________________________
+
+Another way of achieving the same result is if you know the dimensions where the objects are supposed to spawn.
+This method does not require any setup for colliders.
+```.cs
+        Vector3 randomposition = new Vector3(Random.Range(-5, 5), Random.Range(2, 7), Random.Range(-5, 5));
+```
+
+The range values would differ for you according to your world design and spawn points.
+This method requires you to do the calculations for the ranges.
+
+________________________________________________________________________________________________
