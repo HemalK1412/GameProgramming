@@ -125,6 +125,15 @@ public class ZombieSpawner : MonoBehaviour
 {
         public GameObject[] zombietypes;
 
+    public static TargetBounds Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    [SerializeField] BoxCollider col;
+
+
         void update()
         {
         if(Imput.GetKeyDown(KeyCode.Space))
@@ -157,4 +166,5 @@ public class ZombieSpawner : MonoBehaviour
         return randomPosition;
     }
 }
-
+```
+The zombie types would need to be referenced in the array created in the inspector.
