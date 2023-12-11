@@ -20,18 +20,15 @@ _______3 coordinate system image
 
 If the origin marks the center of our collider then we need to find the bounding faces of our collider.
 Which for the x-axis would be -x to origin + origin to X same for Y and Z axes.
-To be continued while explaining the code.
+
+So to get the min value of X (minX) we can 
 
 ```.cs
-public class TargetBounds : MonoBehaviour
-{
-    public static TargetBounds Instance;
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     [SerializeField] BoxCollider col;
+```
+An reference to the Box Collider which is to be drag and dropped from the inspector to this script.
+```.cs
 
     public Vector3 GetRandomPosition()
     {
@@ -55,3 +52,17 @@ public class TargetBounds : MonoBehaviour
     }
 }
 ```
+
+
+
+```.cs
+public class TargetBounds : MonoBehaviour
+{
+    public static TargetBounds Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+```
+
