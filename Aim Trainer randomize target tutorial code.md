@@ -114,3 +114,47 @@ The range values would differ for you according to your world design and spawn p
 This method requires you to do the calculations for the ranges.
 
 ________________________________________________________________________________________________
+
+If you want to spawn different types of objects at different locations
+For example:
+3 Types of Zombies
+        Method 1 :
+```.cs
+
+public class ZombieSpawner : MonoBehaviour
+{
+        public GameObject[] zombietypes;
+
+        void update()
+        {
+        if(Imput.GetKeyDown(KeyCode.Space))
+                {
+                        int randomzombietype = Random.Range(0, zombietypes.Length);
+                        Vector3 SpawnPosition = GetRandomPosition();
+
+                        instantiate(zombietypes[randomzombietype], SpawnPosition, Quaternion.Identity);
+                }
+        }
+
+    public Vector3 GetRandomPosition()
+    {
+        Vector3 centre = col.center + transform.position;
+
+        float minX = centre.x - col.size.x / 2f;
+        float maxX = centre.x + col.size.x / 2f;
+
+        float minY = centre.y - col.size.y / 2f;
+        float maxY = centre.y + col.size.y / 2f;
+
+        float minZ = centre.z - col.size.z / 2f;
+        float maxZ = centre.z + col.size.z / 2f;
+
+        float randomX = Random.Range(minX, maxX);
+        float randomY = Random.Range(minY, maxY);
+        float randomZ = Random.Range(minZ, maxZ);
+
+        Vector3 randomPosition = new Vector3(randomX, randomY, randomZ);
+        return randomPosition;
+    }
+}
+
