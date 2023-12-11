@@ -15,7 +15,12 @@ ________Collider image
 
 Then disable the box collider in the inspector. We only need the dimensions of the collider and do not need collision physics enabled on it.
 
-Then add the script for random spawn you can name it anything you want.
+Then add the script for random spawn you can name it anything you want. I have gone with TargetBounds.
+_______3 coordinate system image
+
+If the origin marks the center of our collider then we need to find the bounding faces of our collider.
+Which for the x-axis would be -x to origin + origin to X same for Y and Z axes.
+To be continued while explaining the code.
 
 ```.cs
 public class TargetBounds : MonoBehaviour
