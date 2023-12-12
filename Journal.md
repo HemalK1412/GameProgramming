@@ -87,4 +87,5 @@ The character could not jump (the code had zero errors and the logic was perfect
 Teleport setup was affecting the entire map and making it spiral out of control
   Thsi is related to issue of colliders not working unless they are convex or have rigidbody attached with them. To solve attach rigidbody and freeze position and rotation.
 
+The character wont teleport move unil physics.SyncTransfroms();
   
