@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 420959935}
-  mouseSensitivity: 500
+  mouseSensitivity: 300
 --- !u!81 &151043003
 AudioListener:
   m_ObjectHideFlags: 0
