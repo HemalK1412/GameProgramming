@@ -83,3 +83,7 @@ Teleporting while moving does funky stuff
 
 The character could not jump (the code had zero errors and the logic was perfect)
   The problem was if you set the ground distance value very low it will overwrite the jump velocity value and reset jump velocity to 0 very quickly.
+
+Teleport setup was affecting the entire map cause it was teleporting the map around so reference the player's character controller as a collider so it only affects that.
+
+  
