@@ -38,8 +38,9 @@ _______3 coordinate system image
 If the origin marks the center of our collider then we need to find the position of the bounding faces of our collider.
 
 
-So if the origin is at 0 and the distance of Origin to X = 1, then origin to -x = 1 as they are equidistant from the origin.
-Then size of X axis would be (-x,X) = 1 + 1 = 2.
+So if the origin is at 0 and the distance of Origin to X = 1.<br>
+Then origin to -x = 1 as they are equidistant from the origin.<br>
+Then the size of the X-axis would be (-x, X) = 1 + 1 = 2.
 
 > minX = center - (size of the X axis)/2.
 > 
@@ -116,7 +117,7 @@ So after we have our ranges for different axes we have the code select a random 
   The randomY coordinate is a random point between minY and maxY.
   The randomZ coordinate is a random point between minZ and maxZ.
 
-We store it in a new Vector 3 with the 3 coordinates as the values for x,y and z axis.
+We store it in a new Vector 3 with the 3 coordinates as the values for the x,y, and z axis.
 
 How to use: (Aim Trainer)
 
@@ -125,7 +126,7 @@ __________ Aim Trainer How to use image
 
 If the player hits a target.
 The target ONHit will call the GetRamdomPosition() function and get a transform vector3 as a return value.
-So on the target the script would be the following and it would set the new position the same as the return value.
+So on the target, the script would be the following and it would set the new position the same as the return value.
 ```.cs
 public void Hit()
     {
@@ -136,7 +137,7 @@ public void Hit()
 
 ____________________________________________________________________________________________
 
-Another way of achieving the same result is if you know the dimensions where the objects are supposed to spawn.
+Another way of achieving the same result is you know the dimensions where the objects are supposed to spawn.
 This method does not require any setup for colliders.
 ```.cs
         Vector3 randomposition = new Vector3(Random.Range(-5, 5), Random.Range(2, 7), Random.Range(-5, 5));
