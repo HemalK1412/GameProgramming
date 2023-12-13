@@ -6,9 +6,9 @@ This tutorial is for spawning objects at random positions.
 <br>
 And will explore 2 ways of achieving this.
 <br>
-1 (Technically not spawning)Move the object after being hit and update counters as in an Aim trainer.
+1. (Technically not spawning)Move the object after being hit and update counters as in an Aim trainer.
 <br>
-2 Actually spawning random objects at random locations.
+2. Actually spawning random objects at random locations.
 <br>
 The script for the random positions will be the same so we will do that first and then go ahead with the separate methods.
 </p>
