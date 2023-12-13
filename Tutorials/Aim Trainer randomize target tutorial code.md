@@ -51,11 +51,17 @@ Then size of X axis would be (-x,X) = 1 + 1 = 2.
 >>>> 
 > minX = -1
 <br>
-maxX = center + (size of the X axis)/2.
 
-max X = 0(center) + 2(size of X axis)/2
-        = 0 + 1
-            1
+> maxX = center + (size of the X axis)/2.
+> 
+>> maxX = 0(center) + 2(size of X axis)/2
+>> 
+>>> = 0 + 1
+>>> 
+>>>> 1
+>>>> 
+> maxX = 1
+<br>
 The range of the x-axis would be (minX, maxX) = (-1, 1)
 
 Same for the Y and Z axes.
