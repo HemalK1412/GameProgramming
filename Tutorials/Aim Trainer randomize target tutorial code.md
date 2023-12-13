@@ -2,6 +2,7 @@
 # Aim Trainer Random target spawn.
 
 ### Description
+
 <p>
 This tutorial is for spawning objects at random positions.
 <br>
@@ -30,7 +31,8 @@ ________Collider image
 Then disable the box collider in the inspector. We only need the dimensions of the collider and do not need collision physics enabled on it.
 </p>
 
-Then add the script for random spawn you can name it anything you want. I have gone with TargetBounds.
+## Maths and Script
+
 _______3 coordinate system image
 
 If the origin marks the center of our collider then we need to find the bounding faces of our collider.
@@ -50,6 +52,8 @@ max X = 0(center) + 2(size of X axis)/2
 The range of the x-axis would be (minX, maxX) = (-1, 1)
 
 Same for the Y and Z axes.
+
+Then add the script for random spawn you can name it anything you want. I have gone with TargetBounds.
 
 ```.cs
 public class TargetBounds : MonoBehaviour
