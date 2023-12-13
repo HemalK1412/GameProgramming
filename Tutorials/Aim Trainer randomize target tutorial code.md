@@ -79,8 +79,8 @@ public class TargetBounds : MonoBehaviour
 
     [SerializeField] BoxCollider col;
 ```
-Create an public instance of the script so the spawn objects can access the GetRandomPosition function.
-An reference to the Box Collider which is to be drag and dropped from the inspector to this script.
+Create a public instance of the script so the spawn objects can access the GetRandomPosition function.
+A reference to the Box Collider which is to be dragged and dropped from the inspector to this script.
 ```.cs
 
     public Vector3 GetRandomPosition()
