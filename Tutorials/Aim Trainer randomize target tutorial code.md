@@ -1,8 +1,15 @@
+
+# Aim Trainer Random target spawn.
+
+<p>
 This tutorial is for spawning objects at random positions.
+<br>
 And will explore 2 ways of achieving this.
+<br>
 1 (Technically not spawning)Move the object after being hit and update counters as in an Aim trainer.
 2 Actually spawning random objects at random locations.
 The script for the random positions will be the same so we will do that first and then go ahead with the separate methods.
+</p>
 
 To create the bounding box on which the objects will spawn Create an Empty object in unity and add a box Collider to it.
 ________Collider edit inspector image.
