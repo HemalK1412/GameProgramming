@@ -42,9 +42,13 @@ So if the origin is at 0 and the distance of Origin to X = 1, then origin to -x 
 Then size of X axis would be (-x,X) = 1 + 1 = 2.
 
 > minX = center - (size of the X axis)/2.
+> 
 >> min X = 0(center) - 2(size of X axis)/2
->>> = 0 - 1 
+>> 
+>>> = 0 - 1
+>>> 
 >>>> -1
+>>>> 
 > minX = -1
 <br>
 maxX = center + (size of the X axis)/2.
