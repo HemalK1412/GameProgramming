@@ -22,6 +22,7 @@ To create the bounding box on which the objects will spawn Create an Empty objec
         ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")
 <br>
 Then edit the box collider size by clicking the button marked below. Clicking the button will enable you to change the collider dimensions by clicking and dragging the dots that have appeared on the collider faces in the scene view.
+<br>
 Now if you have already placed the Gameobject where you need it and just need to expand the collider pressing Alt + adjusting the collider will make it expand on opposite sides simultaneously.
 <br>
 ________Collider image
