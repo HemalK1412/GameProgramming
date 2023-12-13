@@ -13,6 +13,7 @@ And will explore 2 ways of achieving this.
 The script for the random positions will be the same so we will do that first and then go ahead with the separate methods.
 </p>
 
+
 To create the bounding box on which the objects will spawn Create an Empty object in unity and add a box Collider to it.
 ________Collider edit inspector image.
 
