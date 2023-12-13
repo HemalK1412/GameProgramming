@@ -20,7 +20,7 @@ The script for the random positions will be the same so we will do that first an
 <p>
 To create the bounding box on which the objects will spawn Create an Empty object in unity and add a box Collider to it.
 <br>
-        ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")
+________BoxColliderEdit        ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")
 <br>
 Then edit the box collider size by clicking the button marked below. Clicking the button will enable you to change the collider dimensions by clicking and dragging the dots that have appeared on the collider faces in the scene view.
 <br>
@@ -35,17 +35,20 @@ Then disable the box collider in the inspector. We only need the dimensions of t
 
 _______3 coordinate system image
 
-If the origin marks the center of our collider then we need to find the bounding faces of our collider.
+If the origin marks the center of our collider then we need to find the position of the bounding faces of our collider.
 
-minX = center - (size of the X axis)/2.
-maxX = center + (size of the X axis)/2.
 
 So if the origin is at 0 and the distance of Origin to X = 1, then origin to -x = 1 as they are equidistant from the origin.
-Then size of X axis would be (-x,X) = 1 + 1 =2.
+Then size of X axis would be (-x,X) = 1 + 1 = 2.
 
-min X = 0(center) - 2(size of X axis)/2
-        = 0 - 1
-            -1
+> minX = center - (size of the X axis)/2.
+>> min X = 0(center) - 2(size of X axis)/2
+>>> = 0 - 1 
+>>>> -1
+> minX = -1
+<br>
+maxX = center + (size of the X axis)/2.
+
 max X = 0(center) + 2(size of X axis)/2
         = 0 + 1
             1
