@@ -144,14 +144,14 @@ public void Hit()
 ## Method 2
 
 Another way of achieving the same result is you know the dimensions where the objects are supposed to spawn.
-This method does not require any setup for colliders just create an Empty object to place the script on. You also dont need to move this object but it would be preferred should it need future change.
+This method does not require any setup for colliders just create an Empty object to place the script on. You also don't need to move this object but it would be preferred for ease of use.
 
 ```.cs
         Vector3 randomposition = new Vector3(Random.Range(-5, 5), Random.Range(2, 7), Random.Range(-5, 5));
 ```
 
+For this script, you will need to calculate between what points on the x, y, and z axes you want the objects to spawn. So just the minimum and maximum values of the axes.
 The range values would differ for you according to your world design and spawn points.
-This method requires you to do the calculations for the ranges.
 
 ________________________________________________________________________________________________
 
