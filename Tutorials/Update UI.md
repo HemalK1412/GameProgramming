@@ -134,6 +134,11 @@ So it takes the TextMesh reference we set earlier and sets the value to be the N
 
 Also the value is an integer value so we need to convert it to a string variable which is done by adding ".ToString()" and if you want to convert from string to integer the function is int.TryParse("string value").
 
+#### Script Flow
 
-
+1. > Character picks up a key.
+   >> The collectable scripts update the Playe Inventory.
+2. > This invokes the counter in our UI
+   >> Which then grabs the latest value updated in the Inventory and updates the counter.
+ 
 
