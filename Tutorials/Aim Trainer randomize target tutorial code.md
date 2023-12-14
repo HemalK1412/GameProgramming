@@ -117,6 +117,7 @@ This is where we implement our calculations.
 }
 ```
 So after we have our ranges for different axes we have the code select a random point on each axis using those minimum and maximum values.
+
 The randomX coordinate is a random point between minX and maxX.
 
 The randomY coordinate is a random point between minY and maxY.
