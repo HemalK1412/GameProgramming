@@ -37,9 +37,11 @@ Then to the Player object add the script "PlayerMovementScript"
 
     Vector3 velocity;
    ```
-These are the variables we will need 
-         Speed and JumpHeight can be set to whatever you want.
-         Gravity is the freefall velocity of humans at 9.8m/s. This is negative cause it's in the -y direction.
+These are the variables we will need:
+
+Speed and JumpHeight can be set to whatever you want(this will depend on the type and build of your character).
+
+Gravity is the freefall velocity of humans at 9.8m/s and is constant. This is negative cause it's in the -y direction.
          
          
 ```.cs
@@ -68,11 +70,13 @@ These are the variables we will need
 
 ```
 <pp>
-Input.GetAxis is to get data from the Input Manager and then we multiply the value with the corresponding sides and save it in a Vector3 variable. This variable is temporary. 
-Then to move we use Controller.Move(The temporary variable multiplied by speed multiplied by Time.deltaTime to smooth out the movement.
-For Jumping first, we will check for the key press using an if statement.
-The formula for Jump is Jumping = Jump Height * -2f * gravity.
-Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. So to reset the gravity when the character lands is to create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
+Input.GetAxis is to get data from the Input Manager and then we multiply the value with the corresponding sides and save it in a Vector3 variable. This variable is temporary. (The X-axis is for sideways movement and the Z-axis is for forward and backward movement).<br>
+Then to move we use Controller.Move (The temporary variable multiplied by speed multiplied by Time.deltaTime to smooth out the movement).<br>
+For Jumping first, we will check for the key press using an if statement.<br>
+The formula for Jump is Jumping = SquareRoot ((Jump Height * -2f) * gravity).
+    The formula is the velocity needed to jump a certain height.
+    
+Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. So to reset the gravity when the character lands, create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
 We will some new variables.
 
 ```.cs
