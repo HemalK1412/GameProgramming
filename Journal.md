@@ -39,7 +39,7 @@ Teleport setup was affecting the entire map and making it spiral out of control
 
 The character wont teleport move until physics.SyncTransfroms();
 
-
+Unity has fully merged with Text Mesh Pro and the object reference I was trying to setup was throwing errors. You need to add an extra namespace "using TMpro;" at the top.
 Update Ui using different Methods
 
 Event System and direct update
