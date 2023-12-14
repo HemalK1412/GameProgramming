@@ -10,7 +10,7 @@ Then set the layer to "Ground". If you do not have a ground layer you can add on
 >> Add Layer
 >>> Name a new Layer "Ground". 
 
-Images for layer setup.
+![Layer Setup](https://github.com/HemalK1412/GameProgramming/blob/4e7482f7154eb4338d6a1f93045f447c4d07ae01/Tutorials/Images(Tutorials)/Character%20Controller/Add%20Layer.png)
 
 <p>
 Make an Empty Object, name it Player, and add the Character Controller Component to it.<br>
@@ -82,7 +82,8 @@ Then to move we use Controller.Move (The temporary variable multiplied by speed 
 For Jumping first, we will check for the key press using an if statement.<br>
     
 The formula for Jump is Jumping = SquareRoot ((Jump Height * -2f) * gravity).
-    The formula is the velocity needed to jump a certain height.
+
+The formula is the velocity needed to jump a certain height.
     
 Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. 
 
