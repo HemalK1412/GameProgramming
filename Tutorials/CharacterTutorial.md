@@ -79,7 +79,10 @@ For Jumping first, we will check for the key press using an if statement.<br>
 The formula for Jump is Jumping = SquareRoot ((Jump Height * -2f) * gravity).
     The formula is the velocity needed to jump a certain height.
     
-Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. So to reset the gravity when the character lands, create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
+Then to increase freefall speed we will keep adding gravity. This will cause the gravity to keep increasing every time the character jumps. 
+
+So to reset the gravity when the character lands, create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
+
 We will some new variables.
 
 ```.cs
