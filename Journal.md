@@ -1,7 +1,7 @@
 
 # learning Journal
 
-###
+### 
 > For Mac users, the scripts do not open right away in Visual Studio.
 >> The default option to open scripts is Visual Studio. But even changing it to VS Code did not solve the issue. A temporary fix is to locate the script in the File Explorer and open it in VS code.
 
