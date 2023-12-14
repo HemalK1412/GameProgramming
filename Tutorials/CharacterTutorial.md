@@ -36,7 +36,8 @@ Then to the Player object add the script "PlayerMovementScript"
     public float JumpHeight = 3f;
 
     Vector3 velocity;
-   ```
+```
+
 These are the variables we will need:
 
 Speed and JumpHeight can be set to whatever you want(this will depend on the type and build of your character).
