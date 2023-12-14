@@ -59,7 +59,7 @@ Then the size of the X-axis would be (-x, X) = 1 + 1 = 2.
 >>>> 
 > maxX = 1
 <br>
-The range of the x-axis would be (minX, maxX) = (-1, 1)
+The range of the x-axis would be (minX, maxX) = (-1, 1).
 
 Same for the Y and Z axes.
 
