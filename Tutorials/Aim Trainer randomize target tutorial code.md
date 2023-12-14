@@ -117,9 +117,11 @@ This is where we implement our calculations.
 }
 ```
 So after we have our ranges for different axes we have the code select a random point on each axis using those minimum and maximum values.
-  The randomX coordinate is a random point between minX and maxX.
-  The randomY coordinate is a random point between minY and maxY.
-  The randomZ coordinate is a random point between minZ and maxZ.
+The randomX coordinate is a random point between minX and maxX.
+
+The randomY coordinate is a random point between minY and maxY.
+
+The randomZ coordinate is a random point between minZ and maxZ.
 
 We store it in a new Vector 3 with the 3 coordinates as the values for the x,y, and z axis.
 
