@@ -134,11 +134,80 @@ So it takes the TextMesh reference we set earlier and sets the value to be the N
 
 Also the value is an integer value so we need to convert it to a string variable which is done by adding ".ToString()" and if you want to convert from string to integer the function is int.TryParse("string value").
 
+#### Final Setup
+
+After the scripts are attached to the corresponding objects.
+
+The Player who has the PlayerInventory script and extra box has opened for the event.<br>
+Place the the key count text box here which has the InventoryUI script use the drop-down menu to select the UpdateKeyCount method. 
+
 #### Script Flow
 
 1. > The character picks up a key.
    >> The collectable scripts update the Player Inventory.
 2. > This invokes the counter in our UI.
    >> Which then grabs the latest value updated in the Inventory and updates the counter.
+
+## Directly updating it
+
+This script is on a gun and counts target hits.
+
+### Setup
+
+A canvas setup like this.
+
+#### Script
+
+```.cs
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+```
+
+The same namespace will need to be added here.
+
+```.cs
+
+public class TargetShooter : MonoBehaviour
+{
+    [SerializeField] Camera cam;
+    public TextMeshProUGUI ScoreCounter;
+    private int Score = 0;
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            GunShot.Play();
+            if(Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Target target = hit.collider.gameObject.GetComponent<Target>();
+                if(target != null)
+                {
+                    target.Hit();
+                    Score++;
+                    ScoreCounter.text = Score.ToString();
+                }
+                else
+                {
+                    Miss++;
+                    MissCounter.text = Miss.ToString();
+                }
+            }
+        }
+        if (Input.GetKeyDown("r"))
+        {
+            Score = 0;
+            ScoreCounter.text = Score.ToString();
+            Miss =0;
+            MissCounter.text = Miss.ToString();
+        }
+    }
+}
+
  
 
