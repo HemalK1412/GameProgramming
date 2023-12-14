@@ -136,9 +136,9 @@ Also the value is an integer value so we need to convert it to a string variable
 
 #### Script Flow
 
-1. > Character picks up a key.
-   >> The collectable scripts update the Playe Inventory.
-2. > This invokes the counter in our UI
+1. > The character picks up a key.
+   >> The collectable scripts update the Player Inventory.
+2. > This invokes the counter in our UI.
    >> Which then grabs the latest value updated in the Inventory and updates the counter.
  
 
