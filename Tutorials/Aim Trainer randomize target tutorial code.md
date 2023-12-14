@@ -17,7 +17,7 @@ The script for the random positions will be the same so we will do that first an
 ### Scene Setup
 
 <p>
-To create the bounding box on which the objects will spawn Create an __Empty object__ in unity and add a Box Collider to it.<br>
+To create the bounding box on which the objects will spawn Create an Empty object in unity and add a Box Collider to it.<br>
 ________BoxColliderEdit        ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")<br>
     
 Then edit the box collider size by clicking the button marked below. Clicking the button will enable you to change the collider dimensions by clicking and dragging the dots that have appeared on the collider faces in the scene view.<br>
