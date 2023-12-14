@@ -18,18 +18,23 @@ The script for the random positions will be the same so we will do that first an
 
 <p>
 To create the bounding box on which the objects will spawn Create an Empty object in unity and add a Box Collider to it.<br>
-________BoxColliderEdit        ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")<br>
+
+Then edit the box collider size by clicking the button marked below.
     
-Then edit the box collider size by clicking the button marked below. Clicking the button will enable you to change the collider dimensions by clicking and dragging the dots that have appeared on the collider faces in the scene view.<br>
+![BoxColliderEdit](https://github.com/HemalK1412/GameProgramming/blob/8118eb1e04d78f61544300453a24d50348980172/Tutorials/Images(Tutorials)/Aim%20Trainer/Box%20Collider%20Edit.png)")
     
-Now if you have already placed the Gameobject where you need it and just need to expand the collider pressing Alt + adjusting the collider will make it expand on opposite sides simultaneously.<br>
-________Collider image<br>
+Clicking the button will enable you to change the collider dimensions by clicking and dragging the dots that have appeared on the collider faces in the scene view.
+    
+Now if you have already placed the Gameobject where you need it and just need to expand the collider pressing Alt + adjusting the collider will make it expand on opposite sides simultaneously.
+
+![Collider Image](https://github.com/HemalK1412/GameProgramming/blob/8118eb1e04d78f61544300453a24d50348980172/Tutorials/Images(Tutorials)/Aim%20Trainer/Box%20Collider.png)
+
 Then disable the box collider in the inspector. We only need the dimensions of the collider and do not need collision physics enabled on it.
 </p>
 
 ### Maths
 
-_______3 coordinate system image
+![Coordinate system](https://github.com/HemalK1412/GameProgramming/blob/2d9e40df2c29ab952d2e7e7abc439d7b5741d9c3/Tutorials/Images(Tutorials)/Aim%20Trainer/3D_coordinate_system.jpg)
 
 If the origin marks the center of our collider then we need to find the position of the bounding faces of our collider.
 
@@ -123,11 +128,13 @@ We store it in a new Vector 3 with the 3 coordinates as the values for the x,y, 
 ### How to use: (Aim Trainer)
 
 Say this is the start screen.
-__________ Aim Trainer How to use image
+
+![AimTrainer Start](https://github.com/HemalK1412/GameProgramming/blob/cacc1e668291853ddf273b65d5d0776957c5b511/Tutorials/Images(Tutorials)/Aim%20Trainer/Aim%20trainer.png)
 
 If the player hits a target.
 The target ONHit will call the GetRamdomPosition() function and get a transform vector3 as a return value.
 So on the target, the script would be the following and it would set the new position the same as the return value.
+
 ```.cs
 public void Hit()
     {
