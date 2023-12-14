@@ -27,6 +27,9 @@ The character controller already has a capsule collider built into it. So if you
 Then add a camera as a child to the Player and place it in front of the eyes (you can set the vision cone however you like.)
 
 Then to the Player object add the script "PlayerMovementScript" 
+
+### Script
+
 ```.cs
 {
     public CharacterController controller;
@@ -197,3 +200,94 @@ And we rotate the player on Vector3.up which is the Y-axis(side to side) of the 
 We rotate the player here so we move forward where the camera looks.
 
 If we only rotated the camera here it would mean only the camera would rotate and the player would start moving sideways.
+
+
+### Complete Scripts
+
+#### Movement Script
+
+```.cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovementScript : MonoBehaviour
+{
+    public CharacterController controller;
+
+    public float speed = 10f;
+    public float gravity = -9.8f;
+    public float JumpHeight = 3f;
+    public Transform GroundCheck;
+    public float groundDistance = 0.4f;
+    public  LayerMask groundMask;
+
+
+    Vector3 velocity;
+    bool isGrounded;
+
+
+
+    void Update()
+    {
+        
+        isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -3f;
+        }
+
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime); 
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt((JumpHeight * -2f) * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime); 
+
+        
+    }
+}
+```
+
+#### Look Script
+
+```.cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class PlayerLook : MonoBehaviour
+{
+    public Transform Player;
+    public float mouseSensitivity = 100f;
+
+    float xAxis = 0f;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }   
+
+    void Update()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xAxis -= mouseY;
+        xAxis = Mathf.Clamp(xAxis, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xAxis, 0f, 0f);
+        Player.Rotate(Vector3.up * mouseX);
+    }
+}
+```
+
