@@ -105,7 +105,7 @@
 >> I know the entire point of code is to reduce the compute the game has to perform. Both methods used by me in my game could have been done in a single script and by directly referencing the UI element.
 >> But I wanted to explore different ways to achieve the same tasks and the use cases for the different methods.
 
-Event System and direct update
+> I know that I have done most of my Component fetching in the Start method which is to be done in the Awake method but it does not make that much of a difference.
+>> I have found it to be more useful if the game has a Game Manager script controlling everything and has multiple people working on the same game. If it is a solo project it does not make much of a difference.
 
 
-I know that I have done most of my Component fetching in the Start method which is to be done in the Awake method but it does not make that much of a difference.
