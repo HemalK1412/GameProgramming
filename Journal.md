@@ -1,10 +1,8 @@
 
 ## Journal
 
-
-
-
-For Mac users, the scripts do not open right away in Visual Studio so locate the file in Explorer and open it from there.
+> For Mac users, the scripts do not open right away in Visual Studio.
+>> The default option to open scripts is Visual Studio. But even changing it to VS Code did not solve the issue. A temporary fix is to locate the script in the File Explorer and open it in VS code.
 
 For the gun shooting using ray cast, the gun kept shooting without mouse input.  Tried restarting Unity and copied the code to another file    but the line that checks if the button is pressed had a semi-colon so it went straight inside the if statement (Add images)
 
