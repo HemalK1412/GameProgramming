@@ -96,8 +96,11 @@ We will some new variables.
   
 ```
 The new object we created will serve as the Ground Check transform.
+
 The Ground distance can be adjusted and is the distance at which it will look for the Ground Plane.
+
 The layer mask is to isolate the ground plane collider.
+
 ```.cs
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
 
