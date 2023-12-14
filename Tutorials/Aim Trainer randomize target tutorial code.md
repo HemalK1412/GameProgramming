@@ -153,12 +153,12 @@ This method does not require any setup for colliders just create an Empty object
 For this script, you will need to calculate between what points on the x, y, and z axes you want the objects to spawn. So just the minimum and maximum values of the axes.
 The range values would differ for you according to your world design and spawn points.
 
-________________________________________________________________________________________________
+## Example scripts
 
-If you want to spawn different types of objects at different locations
-For example:
-3 Types of Zombies
-        Method 1 :
+If you want to spawn different types of objects at different locations. 3 different types of zombies.
+
+#### Using Method 1 :
+
 ```.cs
 
 public class ZombieSpawner : MonoBehaviour
@@ -209,13 +209,11 @@ public class ZombieSpawner : MonoBehaviour
 ```
 The setup includes referencing the collider from the inspector and adding the types of zombies to the array in the inspector as well.
 
-So on the trigger in the Update() function which is Spacebar press(this can be whatever you want). 
-The script first selects a random zombie type from the array(The zombie's array index to be specific).
-Then it grabs a SpawnPosition from the GetRandomPosition() function and instantiates the zombie at the random position and keeps the zombies rotaion as it is in the prefab.
+So on the trigger in the Update() function which is Spacebar press(this can be whatever you want).<br>
+The script first selects a random zombie type from the array(The zombie's array index to be specific).<br>
+Then it grabs a SpawnPosition from the GetRandomPosition() function and instantiates the zombie at the random position and keeps the zombie rotation as it is in the prefab.
 
-_________________________________________
-
-method 2:
+#### Using Method 2 :
 
 ```.cs
 
@@ -237,6 +235,7 @@ public class ZombieSpawner : MonoBehaviour
         }
 }
 ```
-The main difference between the 2 methods is who does the calculation for the minimum and maximum ranges.
+
+This script on pressing Spacebar will select a random zombie from the array and instantiate it at a random position from the values set out.<br>
 
 Also, another use for the script described in the aim trainer section is that the script can be used anywhere you need to get random positions even if no new game object is created.
