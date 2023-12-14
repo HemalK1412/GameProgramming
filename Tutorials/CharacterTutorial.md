@@ -109,28 +109,32 @@ The layer mask is to isolate the ground plane collider.
         {
             velocity.y = -1f;
         }
-
 ```
 
 When the character lands it checks for the ground using Physics.Checksphere at the position at a distance of 0.4f for the Ground layer. 
-If isGrounded is true and the current velocity is 0 it resets the velocity component to -1f.
-Without this the character would fall faster with every jump.
 
-Mouse Script
+If isGrounded is true and the current velocity is 0 it resets the velocity component to -1f.
+
+Without this, the character would fall faster with every jump.
+
+### Mouse Script
 
 The script is placed on the Camera that is child to the character controller.
+
 ```.cs
 public class Mouse : MonoBehaviour
 {
     public Transform Player;
     public float mouseSensitivity = 100f;
 
-    float xRotation = 0f;
+    float xAxis = 0f;
 
 ```
 The variables are a reference to the player transform.
-Mouse sensitivity can be changed in the pause menu.
-xRotation is defined to clamp is rotation from top to bottom so the camera does not perform a flip.
+
+Mouse sensitivity can be adjusted in the inspector.
+
+xAxis is defined to clamp its rotation from top to bottom so the camera does not perform a flip.
 
 ```.cs
     private void Awake()
@@ -139,9 +143,10 @@ xRotation is defined to clamp is rotation from top to bottom so the camera does 
     }   
 
 ```
-This is to basically hide the cursor when the game starts.
-The cursor appears when the Esc key is pressed.
 
+This is to hide the cursor when the game starts.
+
+The cursor appears when the Esc key is pressed.
 
 ```.cs
 
@@ -153,18 +158,20 @@ The cursor appears when the Esc key is pressed.
 ```
 This is storing the value of the different axes from the input manager multiplied by the mouse sensitivity and Time.deltaTime.
 ```.cs
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xAxis -= mouseY;
+        xAxis = Mathf.Clamp(xAxis, -90f, 90f);
 ```
-This is subtracting the mouseY from the xRotation and clamping the value from -90f to 90f.
+This is subtracting the mouseY from the xAxis and clamping the value from -90f to 90f.
 ```.cs
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.localRotation = Quaternion.Euler(xAxis, 0f, 0f);
         Player.Rotate(Vector3.up * mouseX);
     }
 }
 ```
-So now we apply the xRotation(y axis) to the camera.
-And apply the X axis rotation to the player.
+So the confusing part about this script is why xAxis interacting with mouseY.
 
-**Need to look into the final explanation**
+The mouse movement is 2 Dimensional.
+
+
+But character movement is 3 Dimensional
