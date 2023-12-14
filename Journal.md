@@ -11,9 +11,18 @@ For the gun shooting using ray cast, the gun kept shooting without mouse input.Â
 For my realistic character controller, first-person the added force component from the grenade makes the character fly and keep rotating. 
   So the character has a ground check object that looks for a ground object in the Ground layer and resets the velocity gained from falling and since the character is rotating this cannot take place. So in the character controllers' rigid body you can constraint all rotation for the characters so he still takes the force but does not go into a death spiral  
 
+while gun switching I would scroll up and down but the weapons would only move down the list.
+  This is because I copied and pasted a part but forgot to change the signs so it moves up the list too.
 
 the grenade will apply force to the boxes but no the destroyed pieces 
     Scan for colliders twice and apply the force twice.
+
+I made my map in blender and exported as an fbx file.
+My player woujld pass through the ground even if I had a box collider on it. but it was solved when i created the ground plane within Unity itself.
+
+Also my map is one single mesh and adding mesh collider will give you the error that the object needs to have a rigidbody or set the collider to a convex collider.
+  A convex collider is just a box that envelops the entire objects and upon starting the playthrough my PLayer would jitter inside the map and be thrown out of the map.
+  To solve dont tick convex in the collider Just add a rigidbody and tick off "Use gravity" and enable "Is Kinematic". just to be safe freeze the position and rotation for the map object form the rigidbody component in the inspector. 
 
 for my guns the muzzle flash will not instantiate
 ---code image
@@ -28,8 +37,12 @@ The character could not jump (the code had zero errors and the logic was perfect
 Teleport setup was affecting the entire map and making it spiral out of control
   Thsi is related to issue of colliders not working unless they are convex or have rigidbody attached with them. To solve attach rigidbody and freeze position and rotation.
 
-The character wont teleport move unil physics.SyncTransfroms();
+The character wont teleport move until physics.SyncTransfroms();
 
 
 Update Ui using different Methods
+
 Event System and direct update
+
+
+I know that I have done most of my Component fetching in the Start method which is to be done in the Awake method but it does not make that much of a difference.
