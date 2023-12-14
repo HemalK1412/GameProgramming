@@ -2,12 +2,20 @@
 
 As the name suggests this will be a first-person character controller.
 
-In Unity set up a Ground plane first. Then set the layer to "Ground". If you do not have a ground layer you can add one by clicking Layer -> Add Layer -> name a new layer "Ground".
-         Add a video for layer setup
+### Setup
 
+In Unity set up a Ground plane first.<br>
+Then set the layer to "Ground". If you do not have a ground layer you can add one by clicking Layer -> Add Layer -> name a new layer "Ground".
+> Layer
+>> Add Layer
+>>> Name a new Layer "Ground". 
 
-Make an Empty Object, name it Player, and add the Character Controller Component to it.
-         The character controller already has a capsule collider built into it. So if you have a character model import it and set it to be the child of the Player object and adjust the height and radius so it envelops the model. I will be using a Cylinder as my Player so here are my values
+Images for layer setup.
+
+<p>
+Make an Empty Object, name it **Player**, and add the Character Controller Component to it.
+         The character controller already has a capsule collider built into it. So if you have a character model import it and set it to be the child of the Player object and adjust the height and radius so it envelops the model. I will be using a Cylinder as my Player so here are my values.
+</p>
          Player -> Character controller component
                   Radius = 0.6
                   Height = 3.6
