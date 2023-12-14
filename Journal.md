@@ -108,4 +108,4 @@
 > I know that I have done most of my Component fetching in the Start method which is to be done in the Awake method but it does not make that much of a difference.
 >> I have found it to be more useful if the game has a Game Manager script controlling everything and has multiple people working on the same game. If it is a solo project it does not make much of a difference.
 
-
+> 
