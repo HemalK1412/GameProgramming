@@ -173,5 +173,6 @@ So the confusing part about this script is why xAxis interacting with mouseY.
 
 The mouse movement is 2 Dimensional.
 
+![mouse axis](https://github.com/HemalK1412/GameProgramming/blob/dc9de70dfe8e030320b925b2bb2896424ba9cae4/Tutorials/Images(Tutorials)/Character%20Controller/Mouse%20Axis.jpg)
 
 But character movement is 3 Dimensional
