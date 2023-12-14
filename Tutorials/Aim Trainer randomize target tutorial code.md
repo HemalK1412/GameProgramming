@@ -1,4 +1,3 @@
-e
 # Aim Trainer Random target spawn.
 
 ### Description
@@ -14,6 +13,9 @@ And will explore 2 ways of achieving this.
 <br>
 The script for the random positions will be the same so we will do that first and then go ahead with the separate methods.
 </p>
+
+
+## Method 1
 
 ### Scene Setup
 
@@ -31,7 +33,7 @@ ________Collider image
 Then disable the box collider in the inspector. We only need the dimensions of the collider and do not need collision physics enabled on it.
 </p>
 
-## Maths
+### Maths
 
 _______3 coordinate system image
 
@@ -67,7 +69,7 @@ The range of the x-axis would be (minX, maxX) = (-1, 1)
 
 Same for the Y and Z axes.
 
-## Script
+### Script
 
 Then add the script for random spawn you can name it anything you want. I have gone with __TargetBounds__.
 
@@ -121,7 +123,7 @@ So after we have our ranges for different axes we have the code select a random 
 
 We store it in a new Vector 3 with the 3 coordinates as the values for the x,y, and z axis.
 
-How to use: (Aim Trainer)
+### How to use: (Aim Trainer)
 
 Say this is the start screen.
 __________ Aim Trainer How to use image
@@ -136,8 +138,7 @@ public void Hit()
     }
 ```
 
-
-____________________________________________________________________________________________
+## Method 2
 
 Another way of achieving the same result is you know the dimensions where the objects are supposed to spawn.
 This method does not require any setup for colliders.
