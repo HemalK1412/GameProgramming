@@ -4,11 +4,24 @@
 > For Mac users, the scripts do not open right away in Visual Studio.
 >> The default option to open scripts is Visual Studio. But even changing it to VS Code did not solve the issue. A temporary fix is to locate the script in the File Explorer and open it in VS code.
 
-For the gun shooting using ray cast, the gun kept shooting without mouse input.  Tried restarting Unity and copied the code to another file    but the line that checks if the button is pressed had a semi-colon so it went straight inside the if statement (Add images)
+> For the gun shooting using ray cast, the gun kept shooting without mouse input.
+>> I tried restarting Unity and copying the code to a new file which did not solve it. The problem was with the line that checks if the button is pressed or not. So it was an If statement that checks wether the player clicked the left mouse button or not ad i put a semicolon at the end of it. This made the code skip the check and call the shoot() function every loop.
 
+```.cs
+    void Update()
+    {
+        if(Input.GetButton("Fire1") && Time.time >= nextTimetoFire)
+        {
+            nextTimetoFire = Time.time + 1f/fireRate;
+            Shoot();
+        }
+    }
+```
 
-For my realistic character controller, first-person the added force component from the grenade makes the character fly and keep rotating. 
-  So the character has a ground check object that looks for a ground object in the Ground layer and resets the velocity gained from falling and since the character is rotating this cannot take place. So in the character controllers' rigid body you can constraint all rotation for the characters so he still takes the force but does not go into a death spiral  
+> For my realistic character controller(first-person controller) the added force component from the grenade makes the character fly and keep rotating.
+>>  So the character has a ground check object that looks for the ground plane in the Ground layer and resets the velocity gained form falling repeatedly and since the character is in air this cannot take place. To fix this add a Rigidbody component to the character controller and constraint all rotation for the character so he still takes the force but does not go into a death spiral.
+
+![Rotation Constraints](https://github.com/HemalK1412/GameProgramming/blob/11e86503f7488a9a6c879937bd971d5a92075e18/Tutorials/Images(Tutorials)/Journal/Character%20controller%20freeze%20rotation.png)
 
 while gun switching I would scroll up and down but the weapons would only move down the list.
   This is because I copied and pasted a part but forgot to change the signs so it moves up the list too.
