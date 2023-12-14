@@ -69,7 +69,8 @@ Gravity is the freefall velocity of humans at 9.8m/s and is constant. This is ne
 
 
 ```
-<pp>
+<p>
+    
 Input.GetAxis is to get data from the Input Manager and then we multiply the value with the corresponding sides and save it in a Vector3 variable. This variable is temporary. (The X-axis is for sideways movement and the Z-axis is for forward and backward movement).<br>
     
 Then to move we use Controller.Move (The temporary variable multiplied by speed multiplied by Time.deltaTime to smooth out the movement).<br>
@@ -83,6 +84,7 @@ Then to increase freefall speed we will keep adding gravity. This will cause the
 
 So to reset the gravity when the character lands, create an empty object at the base of the character and have it reset the gravity when the character is on Ground.
 
+</p>
 We will some new variables.
 
 ```.cs
