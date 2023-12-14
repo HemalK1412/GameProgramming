@@ -18,7 +18,7 @@ The script for the random positions will be the same so we will do that first an
 ### Scene Setup
 
 <p>
-To create the bounding box on which the objects will spawn Create an Empty object in unity and add a box Collider to it.
+To create the bounding box on which the objects will spawn Create an **Empty object** in unity and add a box Collider to it.
 <br>
 ________BoxColliderEdit        ![BoxColliderEdit](/Tutorials/Images(Tutorials)/Aim Trainer/Box Collider Edit.png "Box Collider Edit.png")
 <br>
@@ -31,7 +31,7 @@ ________Collider image
 Then disable the box collider in the inspector. We only need the dimensions of the collider and do not need collision physics enabled on it.
 </p>
 
-## Maths and Script
+## Maths
 
 _______3 coordinate system image
 
@@ -67,7 +67,9 @@ The range of the x-axis would be (minX, maxX) = (-1, 1)
 
 Same for the Y and Z axes.
 
-Then add the script for random spawn you can name it anything you want. I have gone with TargetBounds.
+## Script
+
+Then add the script for random spawn you can name it anything you want. I have gone with __TargetBounds__.
 
 ```.cs
 public class TargetBounds : MonoBehaviour
@@ -80,7 +82,7 @@ public class TargetBounds : MonoBehaviour
 
     [SerializeField] BoxCollider col;
 ```
-Create a public instance of the script so the spawn objects can access the GetRandomPosition function.
+Create a public instance of the script so the spawn objects can access the GetRandomPosition() function.
 A reference to the Box Collider which is to be dragged and dropped from the inspector to this script.
 ```.cs
 
