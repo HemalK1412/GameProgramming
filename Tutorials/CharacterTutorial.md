@@ -4,8 +4,8 @@ As the name suggests this will be a first-person character controller.
 
 ### Setup
 
-In Unity set up a Ground plane first.<br>
-Then set the layer to "Ground". If you do not have a ground layer you can add one by clicking Layer -> Add Layer -> name a new layer "Ground".
+In Unity set up a Ground plane first and set its layer as Ground.<br>
+
 > Layer
 >> Add Layer
 >>> Name a new Layer "Ground". 
