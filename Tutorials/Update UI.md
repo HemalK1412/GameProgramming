@@ -9,4 +9,8 @@ This Tutorial will show you two ways to Update UI.
 ## Using Unity Events
 
 ### Setup
-A canvas with 2 text box 1 with the description of the collectible object 
+A canvas with 2 text boxes 1 with the description of the collectable object and the other empty or a 0.
+
+A collectable that the player will pick up.
+
+The Player will have his inventory(script).
