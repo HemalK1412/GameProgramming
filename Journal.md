@@ -1,5 +1,5 @@
 
-## Journal
+# learning Journal
 
 ###
 > For Mac users, the scripts do not open right away in Visual Studio.
