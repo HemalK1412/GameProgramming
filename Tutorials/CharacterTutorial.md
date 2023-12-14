@@ -156,19 +156,9 @@ The cursor appears when the Esc key is pressed.
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
 ```
-This is storing the value of the different axes from the input manager multiplied by the mouse sensitivity and Time.deltaTime.
-```.cs
-        xAxis -= mouseY;
-        xAxis = Mathf.Clamp(xAxis, -90f, 90f);
-```
-This is subtracting the mouseY from the xAxis and clamping the value from -90f to 90f.
-```.cs
 
-        transform.localRotation = Quaternion.Euler(xAxis, 0f, 0f);
-        Player.Rotate(Vector3.up * mouseX);
-    }
-}
-```
+This is storing the value of the different axes from the input manager multiplied by the mouse sensitivity and Time.deltaTime.
+
 So the confusing part about this script is why xAxis interacting with mouseY.
 
 The mouse movement is 2 Dimensional.
@@ -176,3 +166,34 @@ The mouse movement is 2 Dimensional.
 ![mouse axis](https://github.com/HemalK1412/GameProgramming/blob/dc9de70dfe8e030320b925b2bb2896424ba9cae4/Tutorials/Images(Tutorials)/Character%20Controller/Mouse%20Axis.jpg)
 
 But character movement is 3 Dimensional
+
+![character axis](https://github.com/HemalK1412/GameProgramming/blob/29b830fb9d6e62e1bd7d5291063b318f1788af14/Tutorials/Images(Tutorials)/Character%20Controller/Character%20Axis.png)
+
+So mouseX(side to side) translates to characterY(side to side) rotation and mouseY(up-down) translates to characterX(up-down) rotation.
+
+The xAxis defined in the script is the character rotation for the X-axis(up-down).
+
+```.cs
+        xAxis -= mouseY;
+        xAxis = Mathf.Clamp(xAxis, -90f, 90f);
+```
+
+We take xAxis(character Up-down) and decrease mouseY(mouse up-down) from it because if we add it the rotation is flipped.
+
+Then we clamp the axis so the camera does not perform a flip. 
+
+```.cs
+
+        transform.localRotation = Quaternion.Euler(xAxis, 0f, 0f);
+        Player.Rotate(Vector3.up * mouseX);
+    }
+}
+```
+
+Then we apply the xAxis(character up-down) rotation to the camera. (So the entire character does not rotate.)
+
+And we rotate the player on Vector3.up which is the Y-axis(side to side) of the player with the mouseX(mouse side to side).
+
+We rotate the player here so we move forward where the camera looks.
+
+If we only rotated the camera here it would mean only the camera would rotate and the player would start moving sideways.
