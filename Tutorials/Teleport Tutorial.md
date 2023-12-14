@@ -127,4 +127,4 @@ Since we use a character controller component for our Player we need to perform 
 
 > If your Player still does not teleport.
 >> 1. Attach a Rigidbody.
->> 2. You might also need to Disable the Player before switching positions and enable it afterwards.
+>> 2. You might also need to Disable(Player.SetActive(false)) the Player before switching positions and enable(Player.SetActive(true)) it afterward.
