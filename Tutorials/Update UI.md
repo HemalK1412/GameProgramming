@@ -176,13 +176,17 @@ public class TargetShooter : MonoBehaviour
     [SerializeField] Camera cam;
     public TextMeshProUGUI ScoreCounter;
     private int Score = 0;
+```
+
+The variables needed are a reference to the Text Box and a Score integer.
+
+```.cs
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-            GunShot.Play();
             if(Physics.Raycast(ray, out RaycastHit hit))
             {
                 Target target = hit.collider.gameObject.GetComponent<Target>();
@@ -192,22 +196,12 @@ public class TargetShooter : MonoBehaviour
                     Score++;
                     ScoreCounter.text = Score.ToString();
                 }
-                else
-                {
-                    Miss++;
-                    MissCounter.text = Miss.ToString();
-                }
             }
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            Score = 0;
-            ScoreCounter.text = Score.ToString();
-            Miss =0;
-            MissCounter.text = Miss.ToString();
         }
     }
 }
 
- 
+```
+This function on the Mouse left click casts a ray and if it hits an object with the Target scripts increments the Hit variable.
+Then through direct reference to the Score display on the UI, it updates the display string with the new score value.
 
