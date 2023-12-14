@@ -11,8 +11,10 @@ This Tutorial will show you two ways to Update UI.
 ### Setup
 A canvas with 2 text boxes 1 with the description of the collectable object and the other empty or a 0.
 
-!2 images
-___________________
+![Create Canvas](https://github.com/HemalK1412/GameProgramming/blob/9ae3e776231130a08f0fca82e1aa554a2420f897/Tutorials/Images(Tutorials)/Update%20UI/Create%20Canvas.png)
+
+![Pick up](https://github.com/HemalK1412/GameProgramming/blob/9ae3e776231130a08f0fca82e1aa554a2420f897/Tutorials/Images(Tutorials)/Update%20UI/Canvas%20with%20text.png)
+
 A collectable that the player will pick up.
 
 The Player will have his inventory(script).
@@ -138,7 +140,12 @@ Also the value is an integer value so we need to convert it to a string variable
 
 After the scripts are attached to the corresponding objects.
 
-The Player who has the PlayerInventory script and extra box has opened for the event.<br>
+The Player who has the PlayerInventory script an extra box has opened for the event.<be>
+
+![Event 1](https://github.com/HemalK1412/GameProgramming/blob/9ae3e776231130a08f0fca82e1aa554a2420f897/Tutorials/Images(Tutorials)/Update%20UI/Screenshot%202023-12-14%20080920.png)
+
+![Event 2](https://github.com/HemalK1412/GameProgramming/blob/9ae3e776231130a08f0fca82e1aa554a2420f897/Tutorials/Images(Tutorials)/Update%20UI/Screenshot%202023-12-14%20081005.png)
+
 Place the the key count text box here which has the InventoryUI script use the drop-down menu to select the UpdateKeyCount method. 
 
 #### Script Flow
@@ -152,9 +159,7 @@ Place the the key count text box here which has the InventoryUI script use the d
 
 This script is on a gun and counts target hits.
 
-### Setup
-
-A canvas setup like this.
+![Hit](https://github.com/HemalK1412/GameProgramming/blob/03168f3fced303690af7ba3b62fb7d09cf84e5cf/Tutorials/Images(Tutorials)/Update%20UI/Hit.png)
 
 #### Script
 
