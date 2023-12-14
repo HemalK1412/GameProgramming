@@ -144,7 +144,8 @@ public void Hit()
 ## Method 2
 
 Another way of achieving the same result is you know the dimensions where the objects are supposed to spawn.
-This method does not require any setup for colliders.
+This method does not require any setup for colliders just create an Empty object to place the script on. You also dont need to move this object but it would be preferred should it need future change.
+
 ```.cs
         Vector3 randomposition = new Vector3(Random.Range(-5, 5), Random.Range(2, 7), Random.Range(-5, 5));
 ```
