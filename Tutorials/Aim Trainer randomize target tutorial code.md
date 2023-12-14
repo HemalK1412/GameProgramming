@@ -102,7 +102,7 @@ This is to ensure the accuracy even if the position of the collider moves.
         float minZ = centre.z - col.size.z / 2f;
         float maxZ = centre.z + col.size.z / 2f;
 ```
-**This is where we implement our calculations.
+This is where we implement our calculations.
 
 ```.cs
         float randomX = Random.Range(minX, maxX);
