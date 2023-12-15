@@ -1,4 +1,5 @@
 The tutorials are in a seperate folder but the learning journal is saved outside.
+The Playthrough is with the Learning journal.
 
 In the game the player has to collect the keys (yellow capsules) and the red and blue objects are teleporters to get to the keys.
 The game still has extra gun and target(enemy) scripts marked obsolete. This is because I change the behaviour of those objects. 
